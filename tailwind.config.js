@@ -8,9 +8,15 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'accommodation': "url('/accommodation.svg')",
+        'annie-spratt': "url('/annie-spratt.svg')",
+        'bar-lullaby-paris': "url('/bar-lullaby-paris.svg')",
+        'kasa' : "url('kasa.svg')"
+      },
+fontFamily: {
+        'noto-sans-tamil': ['Noto Sans Tamil', 'sans-serif'],
+        'recursive': ['Recursive', 'sans-serif'],
+        'roboto-mono': ['Roboto Mono', 'monospace'],
       },
     },
   },
