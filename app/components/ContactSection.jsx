@@ -18,7 +18,7 @@ export default function ContactSection() {
         if (newStatus.type) {
             setTimeout(() => {
                 setStatus({ type: "", message: ""})
-            }, 5000)
+            }, 8000)
         }
     };
 

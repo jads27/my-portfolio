@@ -37,23 +37,24 @@ const translations = {
                 kasaWebsite: {
                     title: "Front-end of the Kasa website",
                     description: {
-                        part1: "Front-end of the Kasa website.",
-                        part2: "Front-end development for an accommodation rental website using React.",
-                        part3: "Creation of React components and state management."
+                        part1: "Project completed as part of my OpenClassrooms web developer training",
+                        part2: "Implemented the front-end development of an accommodation rental website using React, focusing on creating React components and efficient state management."
                     }
                 },
                 bookiWebsite: {
                     title: "Responsive UI for Booki",
                     description: {
-                        part1: "The Booki travel agency project aims to develop a user-friendly interface that enables users to easily search for and book accommodations and activities in their preferred city.",
-                        part2: "Project completed as part of my OpenClassrooms training, where I was tasked with integrating the website's interface using only HTML and CSS."
+                        part1: "Project completed as part of my OpenClassrooms web developer training.",
+                        part2: "The Booki travel agency project aims to develop a user-friendly interface for users to easily search and book accommodations and activities in their favorite city.",
+                        part3: "My role was to integrate the site's interface using only HTML and CSS."
                     }
                 },
                 sophieBluelPortfolioWebsite: {
                     title: "Portfolio for an Interior Designer",
                     description: {
-                        part1: "This project was undertaken as part of my OpenClassrooms training, involving the front-end development for the portfolio of an interior designer.",
-                        part2: "My responsibilities included creating the presentation page for the works, implementing the administrator login page, and designing the modal for adding new media."
+                        part1: "Project completed as part of my OpenClassrooms web developer training.",
+                        part2: "Development of the front-end interface of an accommodation rental website using React, with a focus on creating interactive components and establishing a robust architecture.",
+                        part3: "My responsibilities included creating the artwork presentation page, implementing the administrator login page, and designing the modal window to add new media."
                     }
                 }
             }
@@ -105,12 +106,12 @@ const translations = {
           technologies: {
             title: "Technologies",
             description:
-              "Je me concentre principalement sur le développement front-end, excellant dans des technologies telles que TypeScript, React, Next.js et Tailwind CSS. Mon expertise réside dans l'utilisation de ces outils pour créer des interfaces utilisateur efficaces et dynamiques."
+              "Je me concentre principalement sur le développement front-end, possédant une solide compétence dans des technologies telles que TypeScript, React, Next.js et Tailwind CSS. Mon savoir-faire réside dans l'utilisation de ces outils pour concevoir des interfaces utilisateur efficaces et dynamiques."
           },
           tools: {
             title: "Outils",
             description:
-              "J'ai acquis une expérience précieuse avec Figma et GitHub, améliorant ainsi mes compétences en design et en collaboration pour des projets bien équilibrés."
+              "J'ai développé une expertise avec Figma et GitHub, améliorant ainsi mes compétences en design et en collaboration pour assurer la cohérence optimale des projets."
           }
         },
         projects: {
@@ -125,27 +126,24 @@ const translations = {
             kasaWebsite: {
               title: "Front-end du site Kasa",
               description: {
-                part1: "Front-end du site Kasa.",
-                part2:
-                  "Développement front-end pour un site de location d'hébergement en utilisant React.",
-                part3: "Création de composants React et gestion d'état."
+                part1: "Projet réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
+                part2: "Mise en œuvre du développement front-end d'un site de location d'hébergement en utilisant React, en se concentrant sur la création de composants React et la gestion efficace des états."
               }
             },
             bookiWebsite: {
               title: "Interface utilisateur réactive pour Booki",
               description: {
-                part1:
-                  "Le projet de l'agence de voyage Booki vise à développer une interface conviviale permettant aux utilisateurs de rechercher et de réserver facilement des hébergements et des activités dans leur ville préférée.",
-                part2:
-                  "Projet réalisé dans le cadre de ma formation OpenClassrooms, où j'ai été chargé d'intégrer l'interface du site uniquement avec HTML et CSS."
+                part1: "Projet réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
+                part2: "Le projet de l'agence de voyage Booki vise à développer une interface conviviale permettant aux utilisateurs de rechercher et de réserver facilement des hébergements et des activités dans leur ville préférée.",
+                part3: "Mon rôle à été d'intégrer l'interface du site uniquement avec HTML et CSS."
               }
             },
             sophieBluelPortfolioWebsite: {
               title: "Portfolio pour un designer d'intérieur",
               description: {
-                part1:
-                  "Ce projet a été réalisé dans le cadre de ma formation OpenClassrooms, impliquant le développement front-end du portfolio d'un designer d'intérieur.",
-                part2:
+                part1: "Projet réalisé dans le cadre de ma formation OpenClassrooms de développeur web", 
+                part2: "Développement de l'interface front-end d'un site de location d'hébergement en utilisant React, en mettant l'accent sur la création de composants interactifs et la mise en place d'une architecture robuste.",
+                part3:
                   "Mes responsabilités comprenaient la création de la page de présentation des œuvres, la mise en œuvre de la page de connexion de l'administrateur et la conception de la fenêtre modale pour ajouter de nouveaux médias."
               }
             }

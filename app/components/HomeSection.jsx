@@ -6,7 +6,7 @@ export default function HomeSection() {
     const  { language, translations } = useLanguage()
     const currentTranslations = translations[language]
     return (
-        <section id="home" className="mx-auto max-w-6xl pt-64 pb-48 px-4">
+        <section id="home" className="mx-auto max-w-6xl pt-40 pb-48 px-4 md:pt-64">
             <span className="self-start text-xl font-roboto-mono font-bold text-accent">01.</span> 
             <div className="flex items-center flex-col mx-auto gap-4">
                 <p className="text-xl font-recursive">{currentTranslations.home.greetings}</p>

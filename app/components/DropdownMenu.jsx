@@ -75,7 +75,7 @@ export default function DropdownMenu({ isOpen, onClose }) {
                                 <span className="font-roboto-mono font-bold text-accent">03.</span> {currentTranslations.navigation.projects}
                             </SmoothScrollLink>
                         </li>
-                        <li className="order-7 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
+                        <li className="order-2 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
                             <SmoothScrollLink href="contact">
                                 <span className="font-roboto-mono font-bold text-accent">04.</span> {currentTranslations.navigation.contact}
                             </SmoothScrollLink>
