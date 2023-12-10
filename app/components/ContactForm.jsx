@@ -3,7 +3,7 @@ import { useLanguage } from '../../config/contexts/language_context';
 import { useState } from "react"
 import emailjs from "emailjs-com"
 
-export default function Form() { 
+export default function Form({ updateStatus }) { 
     const  { language, translations } = useLanguage()
     const currentTranslations = translations[language] 
 
@@ -12,7 +12,7 @@ export default function Form() {
         email : "",
         message : ""
     })
-    
+
     const [status, setStatus] = useState({
         type: "",
         message: ""
@@ -30,7 +30,8 @@ export default function Form() {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        setStatus({ type: "", message: "" });
+        updateStatus({ type: "", message: "" })
+        setStatus({ type: ""})
 
         setFormSubmitted(true)
 
@@ -65,30 +66,38 @@ export default function Form() {
             )
 
             if (response.status === 200) {
+                updateStatus({
+                    type: "success",
+                    key: `<p>${currentTranslations.contact.form.successMessage}</p>`
+                })
                 setStatus({
                     type: "success",
-                    message: "Your message has been successfully sent ! I'll get back to you as soon as possible."
-                });
+                })
                 setFormData({
                     name: "",
                     email: "",
                     message: ""
-                });
+                })
             } else {
+                updateStatus({
+                    type: "error",
+                    key: `<p>${currentTranslations.contact.form.errorMessage}<a class="underline" href="mailto:jalvesdsilva27@gmail.com"> jalvesdsilva27@gmail.com</a></p>.`
+                })
                 setStatus({
                     type: "error",
-                    message: `Error sending the message. Please try again later or send me an email at <a class="underline" href="mailto:jalvesdsilva27@gmail.com">jalvesdsilva27@gmail.com</a>.`
-                })
+                });
             }
         } catch (error) {
             console.error('Error in POST request:', error);
-          setStatus({
+            updateStatus({
               type: "error",
-              message: "Error sending the message. Please try again later or send an email to jalvesdsilva27@gmail.com.",
+              key: `<p>${currentTranslations.contact.form.errorMessage}<a class="underline" href="mailto:jalvesdsilva27@gmail.com"> jalvesdsilva27@gmail.com</a></p>.`,
+            });
+            setStatus({
+                type: "error",
             });
           }
         };
-
     return (
         <>
                 <form className="flex flex-col" onSubmit={handleSubmit}>
@@ -105,7 +114,6 @@ export default function Form() {
                     {formSubmitted && status.type !== "success" && formData.message.trim().length < 10 && formData.message.trim().length > 0 && <p className="text-red-500 mb-2">{currentTranslations.contact.form.messageLengthError}</p>}
                     <button className="h-11 mt-7 font-bold text-[#F1EEE9] bg-primary rounded-xl" type="submit">{currentTranslations.contact.form.send}</button>
                 </form>
-                {status.type && <div className={`${status.type === "success" ? " bg-green-500" : " bg-red-500"} text-[#F5F5F5] rounded mt-7 p-5`}><p dangerouslySetInnerHTML={{ __html: status.message}}/></div>}
         </>
     )
 }

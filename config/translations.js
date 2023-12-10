@@ -75,10 +75,13 @@ const translations = {
                 requiredField: "This field is required",
                 invalidEmail: "Please enter a valid email address.",
                 messageLengthError: "The message must be at least 10 characters long.",
-                errorMessage: "Error message",
-                successMessage: "Message successfully sent"
+                errorMessage: "Error sending the message. Please try again later or send me an email at",
+                successMessage: "Your message has been successfully sent ! I'll get back to you as soon as possible."
+            }        
+        },
+        footer: {
+              creditText: "Designed and built by"
             }
-        }
 
     },
     fr: {
@@ -165,12 +168,14 @@ const translations = {
             enterYourMessage: "Entrez votre message",
             requiredField: "Ce champ est obligatoire",
             invalidEmail: "Veuillez saisir une adresse e-mail valide.",
-            messageLengthError:
-              "Le message doit contenir au moins 10 caractères.",
-            errorMessage: "Message d'erreur",
-            successMessage: "Message envoyé avec succès"
-          }
-        }
+            messageLengthError: "Le message doit contenir au moins 10 caractères.",
+            errorMessage: "Erreur lors de l'envoi du message. Veuillez réessayer plus tard ou envoyez-moi un e-mail à",
+            successMessage: "Votre message a été envoyé avec succès ! Je vous répondrai dès que possible."
+          }     
+        },
+        footer: {
+              creditText: "Conçu et réalisé par"
+            }
       }
 }
 
