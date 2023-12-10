@@ -1,67 +1,73 @@
-import { useState } from "react"
+import { useLanguage } from '../../config/contexts/language_context';
 
-export default function Form() {
+import { useState } from "react"
+import emailjs from "emailjs-com"
+
+export default function Form() { 
+    const  { language, translations } = useLanguage()
+    const currentTranslations = translations[language] 
+
     const [formData, setFormData] = useState({
         name : "",
         email : "",
         message : ""
     })
-
+    
     const [status, setStatus] = useState({
         type: "",
         message: ""
     })
+    
+    const [formSubmitted, setFormSubmitted] = useState(false);
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const handleChange = (event) => {
         const { name, value } = event.target
         setFormData((prev) => ({ ...prev, [name]: value }))
+        setFormSubmitted(false)
         }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        setStatus({ type: "", message: "" });
 
-        if (!formData.name || !formData.email || !formData.message) {
-            setStatus({
-              type: "error",
-              message: "Veuillez remplir tous les champs du formulaire."
-            });
-            return;
+        setFormSubmitted(true)
+
+        if (!formData.name || !formData.email || !formData.message ) {
+        return;
           }
 
-        // Validation de l'adresse e-mail
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
-        setStatus({
-            type: "error",
-            message: "Veuillez saisir une adresse e-mail valide."
-        });
         return;
         }
 
-        // Validation de la longueur minimale du message
         if (formData.message.length < 10) {
-            setStatus({
-            type: "error",
-            message: "Le message doit contenir au moins 10 caractères."
-            });
-            return;
+        return;
         }
 
-        // Envoi des données au serveur
-        try {
-            // Envoyez les données du formulaire à l'API
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData),
-            })
+        if (!formData.message.trim() || !formData.name.trim()) {
+        return
+        }
 
-            if (response.ok) {
+        const emailParams = {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+          };
+
+        try {
+            const response = await emailjs.send(
+                "service_u9b0ntj",
+                "template_i8lele8",
+                emailParams,
+                "hUDnQHjKkKj8umrSk"
+            )
+
+            if (response.status === 200) {
                 setStatus({
                     type: "success",
-                    message: "Email envoyé avec succès!"
+                    message: "Your message has been successfully sent ! I'll get back to you as soon as possible."
                 });
                 setFormData({
                     name: "",
@@ -71,23 +77,35 @@ export default function Form() {
             } else {
                 setStatus({
                     type: "error",
-                    message: "Erreur lors de l'envoi de l'e-mail. Veuillez réessayer."
+                    message: `Error sending the message. Please try again later or send me an email at <a class="underline" href="mailto:jalvesdsilva27@gmail.com">jalvesdsilva27@gmail.com</a>.`
                 })
             }
         } catch (error) {
             console.error('Error in POST request:', error);
-        }
-    };
+          setStatus({
+              type: "error",
+              message: "Error sending the message. Please try again later or send an email to jalvesdsilva27@gmail.com.",
+            });
+          }
+        };
 
     return (
-        <form className="flex flex-col" onSubmit={handleSubmit}>
-            <label className="mb-2">Name</label>
-            <input className="mb-5 pl-2 h-10 border-2 border-[#8AC4CA] rounded-xl" type="text" placeholder="John Doe" value={formData.name} onChange={handleChange} name="name" />
-            <label className="mb-2">Email</label>
-            <input className="mb-5 pl-2 h-10 border-2 border-[#8AC4CA] rounded-xl" type="text" placeholder="john@doe.com" value={formData.email} onChange={handleChange} name="email" />
-            <label className="mb-2">Message</label>
-            <textarea className="resize-none pl-2 pt-2 h-32 border-2 border-[#8AC4CA] rounded-xl" type="text" placeholder="Enter your message" value={formData.message} onChange={handleChange} name="message" />
-            <button className="h-11 mt-7 font-bold text-[#F1EEE9] bg-[#FC9A2F] rounded-xl" type="submit">Send</button>
-        </form>
+        <>
+                <form className="flex flex-col" onSubmit={handleSubmit}>
+                    <label className="mt-5 mb-2">{currentTranslations.contact.form.name}</label>
+                    <input className={`pl-2 h-10 border-2 border-secondary rounded-xl dark:bg-[#000000] ${formSubmitted && !formData.name.trim() ? "border-red-500" : ""}`} type="text" placeholder="John Doe" value={formData.name} onChange={handleChange} name="name" />
+                    {formSubmitted && status.type !== "success" && !formData.name.trim() && <p className="text-red-500 mb-2">{currentTranslations.contact.form.requiredField}</p>}
+                    <label className="mt-5 mb-2">{currentTranslations.contact.form.email}</label>
+                    <input className={`pl-2 h-10 border-2 border-secondary rounded-xl dark:bg-[#000000] ${(formSubmitted && !formData.email) || (formSubmitted && !emailRegex.test(formData.email)) ? "border-red-500" : ""}`} type="text" placeholder="john@doe.com" value={formData.email} onChange={handleChange} name="email" />
+                    {formSubmitted && status.type !== "success" && !formData.email && <p className="text-red-500 mb-2">{currentTranslations.contact.form.requiredField}</p>}
+                    {formSubmitted && status.type !== "success" && !emailRegex.test(formData.email) && formData.email && <p className="text-red-500 mb-2">{currentTranslations.contact.form.invalidEmail}</p>}
+                    <label className="mt-5 mb-2">{currentTranslations.contact.form.message}</label>
+                    <textarea className={`resize-none pl-2 pt-2 h-32 border-2 border-secondary rounded-xl dark:bg-[#000000] ${formSubmitted && (formData.message.trim().length < 10 || !formData.message.trim()) ? "border-red-500" : ""}`} type="text" placeholder={currentTranslations.contact.form.enterYourMessage} value={formData.message} onChange={handleChange} name="message" />
+                    {formSubmitted && status.type !== "success" && !formData.message.trim() && <p className="text-red-500 mb-2">{currentTranslations.contact.form.requiredField}</p>}
+                    {formSubmitted && status.type !== "success" && formData.message.trim().length < 10 && formData.message.trim().length > 0 && <p className="text-red-500 mb-2">{currentTranslations.contact.form.messageLengthError}</p>}
+                    <button className="h-11 mt-7 font-bold text-[#F1EEE9] bg-primary rounded-xl" type="submit">{currentTranslations.contact.form.send}</button>
+                </form>
+                {status.type && <div className={`${status.type === "success" ? " bg-green-500" : " bg-red-500"} text-[#F5F5F5] rounded mt-7 p-5`}><p dangerouslySetInnerHTML={{ __html: status.message}}/></div>}
+        </>
     )
 }
