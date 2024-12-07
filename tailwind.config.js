@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FC9A2F",
-        secondary: "#8AC4CA",
-        accent: "#2854C5"
+        primary: "#1B77ed",
+        secondary: "#46d7F0",
+        accent: "#ffffff"
       },
       backgroundImage: {
         'accommodation': "url('/accommodation.svg')",

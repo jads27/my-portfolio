@@ -11,7 +11,7 @@ export default function Project({onClick, image, name, title}) {
 
     return (
         <button 
-            className={`project relative z-30 w-full flex items-center h-64 p-8 rounded-xl text-7xl text-[#F5F5F5] border-2 border-solid border-secondary bg-cover bg-center ${image} bg-blend-darken bg-black bg-opacity-30 shadow-md md:p-16`} 
+            className={`project relative z-30 w-full flex items-center h-64 p-8 rounded-xl text-7xl text-[#F5F5F5] border-2 border-solid border-primary bg-cover bg-center ${image} bg-blend-darken bg-black bg-opacity-30 shadow-md md:p-16`} 
             onClick={onClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -20,7 +20,7 @@ export default function Project({onClick, image, name, title}) {
                 <span className="text-white text-2xl font-semibold">{title}</span>
                 <span>{currentTranslations.projects.seeMore}</span>
                 <Image
-                className="max-w-[6rem] self-center"
+                    className="max-w-[6rem] self-center"
                     src="/arrow.svg"
                     alt="Right Arrow"
                     width={95}
@@ -34,4 +34,4 @@ export default function Project({onClick, image, name, title}) {
             </div>
          </button> 
     )
-} 
+}

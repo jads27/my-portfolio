@@ -21,27 +21,27 @@ export default function Header() {
       };
 
     return (
-        <header className="dropdown-container fixed z-40 top-0 right-0 left-0 bg-[#F5F5F5] border-b-2 border-solid border-secondary dark:bg-[#16130E]">
+        <header className="dropdown-container fixed z-40 top-0 right-0 left-0 bg-[#f6fafc] border-b-2 border-solid border-primary dark:bg-[#16130E]">
             <nav className="flex justify-around inset-0 mx-auto max-w-6xl py-[1px] px-4 md:py-3">
                     <ul className="flex justify-center w-full  md:justify-between">
                         <li className="rounded-lg hover:bg-secondary hover:bg-opacity-50 cursor-pointer hidden md:block" tabIndex="0">
                             <SmoothScrollLink href="home">
-                                <span className="font-roboto-mono font-bold text-accent">01.</span> {currentTranslations.navigation.home}
+                                <span className="font-roboto-mono font-bold text-primary">01.</span> {currentTranslations.navigation.home}
                             </SmoothScrollLink>
                         </li>
                         <li className="rounded-lg hover:bg-secondary hover:bg-opacity-50 cursor-pointer hidden md:block" tabIndex="0">
                             <SmoothScrollLink href="skills">
-                                <span className="font-roboto-mono font-bold text-accent">02.</span> {currentTranslations.navigation.skills}
+                                <span className="font-roboto-mono font-bold text-primary">02.</span> {currentTranslations.navigation.skills}
                             </SmoothScrollLink>
                         </li>
                         <li className="rounded-lg hover:bg-secondary hover:bg-opacity-50 cursor-pointer hidden md:block" tabIndex="0">
                             <SmoothScrollLink href="projects">
-                                <span className="font-roboto-mono font-bold text-accent">03.</span> {currentTranslations.navigation.projects}
+                                <span className="font-roboto-mono font-bold text-primary">03.</span> {currentTranslations.navigation.projects}
                             </SmoothScrollLink>
                         </li>
                         <li className="rounded-lg hover:bg-secondary hover:bg-opacity-50 cursor-pointer hidden md:block" tabIndex="0"           >
                             <SmoothScrollLink href="contact">
-                                <span className="font-roboto-mono font-bold text-accent">04.</span> {currentTranslations.navigation.contact}
+                                <span className="font-roboto-mono font-bold text-primary">04.</span> {currentTranslations.navigation.contact}
                             </SmoothScrollLink>
                         </li>
                         <li className="flex items-center">

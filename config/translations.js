@@ -70,7 +70,7 @@ const translations = {
             form: {
                 name: "Name",
                 email: "Email",
-                message: "message",
+                message: "Message",
                 send: "Send",
                 enterYourMessage: "Enter your message",
                 requiredField: "This field is required",

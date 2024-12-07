@@ -36,8 +36,8 @@ export default function Modal({ isVisible, onClose, imagePreview, alt, title, de
                 transition={transition}
                 exit="exit"
                 >
-                    <div className="relative flex flex-col overflow-y-auto h-full mt-48 bg-[#F5F5F5] rounded-t-[50px] border-t-2 border-[#8AC4CA] md:overflow-hidden dark:bg-[#16130E]">
-                        <button className="fixed m-6 text-xl place-self-end bg-[#F5F5F5] rounded" onClick={handleModalClose}><FaXmark className="text-4xl" /></button>      
+                    <div className="relative flex flex-col overflow-y-auto h-full mt-48 bg-[#f6fafc] rounded-t-[50px] border-t-2 border-primary md:overflow-hidden dark:bg-[#16130E]">
+                        <button className="fixed m-6 text-xl place-self-end bg-[#f2fcfe] rounded" onClick={handleModalClose}><FaXmark className="text-4xl" /></button>      
                         <div className="flex flex-col-reverse justify-between my-auto mx-auto w-full gap-8 max-w-6xl px-4 my-34 mt-20 text-center md:flex-row md:text-start md:mt-auto dark:text-[#F5F5F5]">
                             <div className="flex flex-col-reverse w-full md:max-w-lg md:flex-col">
                                 <Image

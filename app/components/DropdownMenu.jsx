@@ -51,7 +51,7 @@ export default function DropdownMenu({ isOpen, onClose }) {
 
     return (
             <motion.div 
-            className={`${!isOpen ? "hidden" : "flex" } absolute w-full mt-[2px] border-b-2 border-secondary bg-[#F5F5F5] dark:bg-[#16130E]`}
+            className={`${!isOpen ? "hidden" : "flex" } absolute w-full mt-[2px] border-b-2 border-primary bg-[#f6fafc] dark:bg-[#16130E]`}
             variants={dropdownAnimation}
             initial="hidden"
             animate={isOpen ? "visible" : "hidden"}
@@ -60,34 +60,14 @@ export default function DropdownMenu({ isOpen, onClose }) {
             >
                 <nav className="flex inset-0 mx-auto max-w-6xl py-3 px-4 md:w-full">
                     <ul className="grid grid-rows-2 grid-cols-2 justify-around w-full md:flex">
-                        <li className="order-1 md:order-none w-fullrounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
-                            <SmoothScrollLink href="home">
-                                <span className="font-roboto-mono font-bold text-accent">01.</span> {currentTranslations.navigation.home}
-                            </SmoothScrollLink>
-                        </li>
-                        <li className="order-3 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
-                            <SmoothScrollLink href="skills">
-                                <span className="font-roboto-mono font-bold text-accent">02.</span> {currentTranslations.navigation.skills}
-                            </SmoothScrollLink>
-                        </li>
-                        <li className="order-5 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
-                            <SmoothScrollLink href="projects">
-                                <span className="font-roboto-mono font-bold text-accent">03.</span> {currentTranslations.navigation.projects}
-                            </SmoothScrollLink>
-                        </li>
-                        <li className="order-2 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
-                            <SmoothScrollLink href="contact">
-                                <span className="font-roboto-mono font-bold text-accent">04.</span> {currentTranslations.navigation.contact}
-                            </SmoothScrollLink>
-                        </li>
                         <li className="order-4 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out">
-                            <button className=" flex items-center py-2 px-5" onClick={handleLanguageSwitch}><FaLanguage className="text-xl text-accent"  />
-                                <span className="font-roboto-mono font-bold text-accent">.</span> {currentTranslations.navigation.language}
+                            <button className=" flex items-center py-2 px-5" onClick={handleLanguageSwitch}><FaLanguage className="text-xl text-primary"  />
+                                <span className="font-roboto-mono font-bold text-primary">.</span> {currentTranslations.navigation.language}
                             </button>
                         </li>
                         <li className="order-6 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out whitespace-nowrap">
-                            <button className="flex items-center py-2 px-5" onClick={handleDarkModeSwitch}><BsSunFill className="text-xl text-accent"  />
-                                <span className="font-roboto-mono font-bold text-accent">.</span> {darkMode ? currentTranslations.navigation.lightMode : currentTranslations.navigation.darkMode}
+                            <button className="flex items-center py-2 px-5" onClick={handleDarkModeSwitch}><BsSunFill className="text-xl text-primary"  />
+                                <span className="font-roboto-mono font-bold text-primary">.</span> {darkMode ? currentTranslations.navigation.lightMode : currentTranslations.navigation.darkMode}
                             </button>
                         </li>
                     </ul>

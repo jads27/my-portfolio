@@ -6,14 +6,14 @@ export default function SkillsSection() {
   const  { language, translations } = useLanguage()
   const currentTranslations = translations[language]
     return (
-        <section id="skills" className="bg-primary bg-opacity-40 py-16">
+        <section id="skills" className="bg-secondary bg-opacity-20 py-16">
             <div className='mx-auto max-w-6xl px-4'>
-            <span className="self-start text-xl font-roboto-mono font-bold text-accent">02.</span>
+            <span className="self-start text-xl font-roboto-mono font-bold text-primary">02.</span>
                 <div className="flex items-center flex-col">
                     <h1 className="mb-11 text-4xl font-semibold font-recursive">{currentTranslations.skills.title}</h1>
                     <h2 className="mb-3 text-2xl">{currentTranslations.skills.technologies.title}</h2>
-                    <div className="relative flex w-full mx-auto max-w-xl max-h-32 mb-11 py-5 rounded-2xl border-2 border-solid border-secondary">
-                        <div className="absolute flex items-center p-7 text-center inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-700 bg-secondary">
+                    <div className="relative flex w-full mx-auto max-w-xl max-h-32 mb-11 py-5 rounded-2xl border-2 border-solid border-primary">
+                        <div className="absolute flex items-center p-7 text-center inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-700 bg-primary">
                             <span className="select-none text-white text-sm font-black">{currentTranslations.skills.technologies.description}</span>
                         </div>
                         <Image
@@ -50,8 +50,8 @@ export default function SkillsSection() {
                         />
                     </div>
                     <h2 className="mb-3 text-2xl">{currentTranslations.skills.tools.title}</h2>
-                    <div className="relative flex w-full mx-auto max-w-[18rem] max-h-32 py-5 rounded-2xl border-2 border-solid border-secondary">
-                        <div className="absolute flex items-center p-7 text-center inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-700 bg-secondary">
+                    <div className="relative flex w-full mx-auto max-w-[18rem] max-h-32 py-5 rounded-2xl border-2 border-solid border-primary">
+                        <div className="absolute flex items-center p-7 text-center inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-700 bg-primary">
                             <span className="select-none text-white text-sm font-black">{currentTranslations.skills.tools.description}</span>
                         </div>
                         <Image
