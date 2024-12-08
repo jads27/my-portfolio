@@ -9,6 +9,13 @@ export default function SmoothScrollLink({ href, children }) {
       spy={true}
       offset={-70}
       className="py-2 px-5 block"
+      tabIndex="0"
+      onKeyPress={(event) => {
+        if (event.key === "Enter") {
+          event.preventDefault()
+          document.querySelector(`#${href}`)?.scrollIntoView({ behavior: "smooth" })
+        }
+      }}
     >
       {children}
     </ScrollLink>

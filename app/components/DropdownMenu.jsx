@@ -3,7 +3,6 @@ import { useDarkMode } from '../../config/contexts/darkmode_context'
 
 import { useEffect } from "react"
 import { motion } from "framer-motion"
-import SmoothScrollLink from './SmoothScrollLink'
 import { FaLanguage } from "react-icons/fa6"
 import { BsSunFill } from "react-icons/bs"
 
@@ -60,12 +59,12 @@ export default function DropdownMenu({ isOpen, onClose }) {
             >
                 <nav className="flex inset-0 mx-auto max-w-6xl py-3 px-4 md:w-full">
                     <ul className="grid grid-rows-2 grid-cols-2 justify-around w-full md:flex">
-                        <li className="order-4 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out">
+                        <li className="order-4 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-40 ease-in-out">
                             <button className=" flex items-center py-2 px-5" onClick={handleLanguageSwitch}><FaLanguage className="text-xl text-primary"  />
                                 <span className="font-roboto-mono font-bold text-primary">.</span> {currentTranslations.navigation.language}
                             </button>
                         </li>
-                        <li className="order-6 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out whitespace-nowrap">
+                        <li className="order-6 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-40 ease-in-out whitespace-nowrap">
                             <button className="flex items-center py-2 px-5" onClick={handleDarkModeSwitch}><BsSunFill className="text-xl text-primary"  />
                                 <span className="font-roboto-mono font-bold text-primary">.</span> {darkMode ? currentTranslations.navigation.lightMode : currentTranslations.navigation.darkMode}
                             </button>
