@@ -102,14 +102,14 @@ export default function Form({ updateStatus }) {
         <>
             <form className="flex flex-col" onSubmit={handleSubmit}>
                 <label className="mt-5 mb-2">{currentTranslations.contact.form.name}</label>
-                <input className={`pl-2 h-10 border-2 border-primary rounded-xl dark:bg-[#000000] ${formSubmitted && !formData.name.trim() ? "border-red-500" : ""}`} type="text" placeholder="John Doe" value={formData.name} onChange={handleChange} name="name" />
+                <input className={`pl-2 h-10 border-2 border-secondary rounded-xl dark:bg-[#000000] ${formSubmitted && !formData.name.trim() ? "border-red-500" : ""}`} type="text" placeholder="John Doe" value={formData.name} onChange={handleChange} name="name" />
                 {formSubmitted && status.type !== "success" && !formData.name.trim() && <p className="text-red-500 mb-2">{currentTranslations.contact.form.requiredField}</p>}
                 <label className="mt-5 mb-2">{currentTranslations.contact.form.email}</label>
-                <input className={`pl-2 h-10 border-2 border-primary rounded-xl dark:bg-[#000000] ${(formSubmitted && !formData.email) || (formSubmitted && !emailRegex.test(formData.email)) ? "border-red-500" : ""}`} type="text" placeholder="john@doe.com" value={formData.email} onChange={handleChange} name="email" />
+                <input className={`pl-2 h-10 border-2 border-secondary rounded-xl dark:bg-[#000000] ${(formSubmitted && !formData.email) || (formSubmitted && !emailRegex.test(formData.email)) ? "border-red-500" : ""}`} type="text" placeholder="john@doe.com" value={formData.email} onChange={handleChange} name="email" />
                 {formSubmitted && status.type !== "success" && !formData.email && <p className="text-red-500 mb-2">{currentTranslations.contact.form.requiredField}</p>}
                 {formSubmitted && status.type !== "success" && !emailRegex.test(formData.email) && formData.email && <p className="text-red-500 mb-2">{currentTranslations.contact.form.invalidEmail}</p>}
                 <label className="mt-5 mb-2">{currentTranslations.contact.form.message}</label>
-                <textarea className={`resize-none pl-2 pt-2 h-32 border-2 border-primary rounded-xl dark:bg-[#000000] ${formSubmitted && (formData.message.trim().length < 10 || !formData.message.trim()) ? "border-red-500" : ""}`} type="text" placeholder={currentTranslations.contact.form.enterYourMessage} value={formData.message} onChange={handleChange} name="message" />
+                <textarea className={`resize-none pl-2 pt-2 h-32 border-2 border-secondary rounded-xl dark:bg-[#000000] ${formSubmitted && (formData.message.trim().length < 10 || !formData.message.trim()) ? "border-red-500" : ""}`} type="text" placeholder={currentTranslations.contact.form.enterYourMessage} value={formData.message} onChange={handleChange} name="message" />
                 {formSubmitted && status.type !== "success" && !formData.message.trim() && <p className="text-red-500 mb-2">{currentTranslations.contact.form.requiredField}</p>}
                 {formSubmitted && status.type !== "success" && formData.message.trim().length < 10 && formData.message.trim().length > 0 && <p className="text-red-500 mb-2">{currentTranslations.contact.form.messageLengthError}</p>}
                 <button className="h-11 mt-7 font-bold text-[#F1EEE9] bg-primary rounded-xl" type="submit">{currentTranslations.contact.form.send}</button>

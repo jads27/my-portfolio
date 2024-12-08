@@ -24,8 +24,8 @@ export default function HomeSection() {
                 <div className="flex-col mx-auto">
                     <p className="text-center text-xl font-recursive">{currentTranslations.home.greetings}</p>
                     <h1 className="text-6xl text-center font-recursive font-extrabold mt-5"><span className="block">Jimmy</span><span className="block">Alves Da Silva</span></h1>
-                    <p className="max-w-[608px] text-center text-2xl font-recursive mt-5"><span className="font-extrabold">{currentTranslations.home.role}</span> {currentTranslations.home.description}</p>
-                    <div className="flex justify-center gap-14 mt-8">
+                    <p className="max-w-[608px] text-center text-2xl font-recursive mt-8"><span className="font-extrabold">{currentTranslations.home.role}</span> {currentTranslations.home.description}</p>
+                    <div className="flex justify-center gap-14 mt-10">
                         <a className="flex items-center gap-2 p-2.5 rounded-xl bg-primary text-[#F1EEE9]" href="https://www.linkedin.com/in/jimmy-alves-da-silva-ba2834255/" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin />
                             <span>Linkedin</span>
