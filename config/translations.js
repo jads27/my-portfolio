@@ -5,7 +5,7 @@ const translations = {
             skills: "Skills",
             projects: "Projects",
             contact: "Contact",
-            language: "Français",
+            language: "French",
             lightMode: "Light mode",
             darkMode: "Dark mode"
         },
@@ -18,11 +18,11 @@ const translations = {
             title: "Skills",
             technologies: {
                 title: "Technologies",   
-                description: "I primarily focus on frontend development, excelling in technologies such as TypeScript, React, Next.js, and Tailwind CSS. My expertise lies in leveraging these tools to create efficient and dynamic user interfaces."
+                description: "With skills in technologies such as TypeScript, React, Next.js and Tailwind CSS, my expertise lies in using these tools to design effective and dynamic user interfaces."
             },
             tools: {
                 title: "Tools",
-                description: "I've gained valuable experience with Figma and GitHub, enhancing my design and collaboration skills for well-rounded projects."
+                description: "Interested in aesthetics, I learned to use Figma and GitHub to self-manage my projects, improving my design and organisation skills."
             }
         },
         projects: {
@@ -35,26 +35,28 @@ const translations = {
                 viewCode: "View code",
                 visitWebsite: "Visit website",
                 kasaWebsite: {
-                    title: "Front-end of the Kasa website",
+                    header: "Kasa's React UI",
+                    title: "Kasa's React UI - Accommodation rental",
                     description: {
-                        part1: "Project completed as part of my OpenClassrooms web developer training",
-                        part2: "Implemented the front-end development of an accommodation rental website using React, focusing on creating React components and efficient state management."
+                        part1: "Project completed as part of my OpenClassrooms web developer internship",
+                        part2: "Front-end development of an accommodation rental website using React, focusing on creating React components and efficient state management."
                     }
                 },
                 bookiWebsite: {
-                    title: "Responsive UI for Booki",
+                    header: "Booki's Adaptative UI",
+                    title: "Booki's Adaptative UI - Travel agency",
                     description: {
-                        part1: "Project completed as part of my OpenClassrooms web developer training.",
-                        part2: "The Booki travel agency project aims to develop a user-friendly interface for users to easily search and book accommodations and activities in their favorite city.",
+                        part1: "Project completed as part of my OpenClassrooms web developer internship.",
+                        part2: "The travel agency Booki aims to develop a user-friendly interface enabling users to easily search for and book accommodation and activities in their favourite city.",
                         part3: "My role was to integrate the site's interface using only HTML and CSS."
                     }
                 },
                 sophieBluelPortfolioWebsite: {
-                    title: "Portfolio for an Interior Designer",
+                    header: "Sophie Bluel's Interactive gallery",
+                    title: "Sophie Bluel's Interactive gallery - Interior architect",
                     description: {
-                        part1: "Project completed as part of my OpenClassrooms web developer training.",
-                        part2: "Development of the front-end interface of an accommodation rental website using React, with a focus on creating interactive components and establishing a robust architecture.",
-                        part3: "My responsibilities included creating the artwork presentation page, implementing the administrator login page, and designing the modal window to add new media."
+                        part1: "Project completed as part of my OpenClassrooms web developer internship.",
+                        part2: "For an interior architect's portfolio, I developed a front-end interface incorporating a page for presenting the works, an administrator login system and a modal for adding media, with API calls dynamically managing the gallery's projects."
                     }
                 }
             }
@@ -91,7 +93,7 @@ const translations = {
           skills: "Compétences",
           projects: "Projets",
           contact: "Contact",
-          language: "English",
+          language: "Anglais",
           lightMode: "Mode clair",
           darkMode: "Mode sombre"
         },
@@ -106,12 +108,12 @@ const translations = {
           technologies: {
             title: "Technologies",
             description:
-              "Je me concentre principalement sur le développement front-end, possédant une solide compétence dans des technologies telles que TypeScript, React, Next.js et Tailwind CSS. Mon savoir-faire réside dans l'utilisation de ces outils pour concevoir des interfaces utilisateur efficaces et dynamiques."
+              "Possédant des compétences dans des technologies telles que TypeScript, React, Next.js et Tailwind CSS, mon savoir-faire se trouve dans l'utilisation de ces outils pour concevoir des interfaces utilisateurs efficaces et dynamiques."
           },
           tools: {
             title: "Outils",
             description:
-              "J'ai développé une expertise avec Figma et GitHub, améliorant ainsi mes compétences en design et en collaboration pour assurer la cohérence optimale des projets."
+              "Intéressé par l'esthétique j'ai appris à utiliser Figma et GitHub pour un bonne autogestion de mes projets, améliorant ainsi mes compétences en design et en organisation."
           }
         },
         projects: {
@@ -124,27 +126,28 @@ const translations = {
             viewCode: "Voir le code",
             visitWebsite: "Visiter le site",
             kasaWebsite: {
-              title: "Front-end du site Kasa",
+              header: "React UI de Kasa",
+              title: "React UI de Kasa - Location d'hébergement",
               description: {
                 part1: "Projet réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
-                part2: "Mise en œuvre du développement front-end d'un site de location d'hébergement en utilisant React, en se concentrant sur la création de composants React et la gestion efficace des états."
+                part2: "Mise en œuvre du développement front-end d'un site de location d'hébergement nommé Kasa en utilisant React, en se concentrant sur la création de composants et la gestion efficace des états."
               }
             },
             bookiWebsite: {
-              title: "Interface utilisateur réactive pour Booki",
+              header: "Adaptative UI de Booki",
+              title: "Adaptative UI de Booki - Agence de voyage",
               description: {
                 part1: "Projet réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
-                part2: "Le projet de l'agence de voyage Booki vise à développer une interface conviviale permettant aux utilisateurs de rechercher et de réserver facilement des hébergements et des activités dans leur ville préférée.",
+                part2: "L'agence de voyage Booki vise à développer une interface conviviale permettant aux utilisateurs de rechercher et de réserver facilement des hébergements et des activités dans leur ville préférée.",
                 part3: "Mon rôle à été d'intégrer l'interface du site uniquement avec HTML et CSS."
               }
             },
             sophieBluelPortfolioWebsite: {
-              title: "Portfolio pour un designer d'intérieur",
+              header: "Galerie intéractive de Sophie Bluel",
+              title: "Galerie intéractive de Sophie Bluel - Architecte d'intérieur",
               description: {
                 part1: "Projet réalisé dans le cadre de ma formation OpenClassrooms de développeur web", 
-                part2: "Développement de l'interface front-end d'un site de location d'hébergement en utilisant React, en mettant l'accent sur la création de composants interactifs et la mise en place d'une architecture robuste.",
-                part3:
-                  "Mes responsabilités comprenaient la création de la page de présentation des œuvres, la mise en œuvre de la page de connexion de l'administrateur et la conception de la fenêtre modale pour ajouter de nouveaux médias."
+                part2: "Pour le portfolio d'un architecte d'intérieur, j'ai développé une interface front-end intégrant une page de présentation des œuvres, un système de connexion administrateur et une modale pour l'ajout de médias, avec des appels API gérant dynamiquement les projets de la galerie."
               }
             }
           }

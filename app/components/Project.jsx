@@ -3,7 +3,7 @@ import { useLanguage } from '../../config/contexts/language_context';
 import { useState } from "react"
 import Image from "next/image"
 
-export default function Project({onClick, image, name, title}) {
+export default function Project({onClick, image, name, header}) {
     const  { language, translations } = useLanguage()
     const currentTranslations = translations[language]
 
@@ -17,7 +17,7 @@ export default function Project({onClick, image, name, title}) {
             onMouseLeave={() => setIsHovered(false)}
             >
             <div className="absolute inset-0 z-10 flex flex-col justify-end gap-2 pb-2 text-2xl rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300 bg-primary bg-opacity-75">
-                <span className="text-white text-2xl font-semibold">{title}</span>
+                <span className="text-white text-3xl font-semibold">{header}</span>
                 <span>{currentTranslations.projects.seeMore}</span>
                 <Image
                     className="max-w-[6rem] self-center"
