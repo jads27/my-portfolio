@@ -29,7 +29,7 @@ export default function ProjectsSection() {
         <section id="projects" className="mx-auto max-w-6xl px-4 py-16">
             <span className="self-start text-xl font-roboto-mono font-bold text-primary">03.</span>
             <div className="flex items-center flex-col md:mx-28">
-                <h1 className="mb-11 inset-0 text-4xl font-semibold font-recursive">{currentTranslations.projects.header}</h1>
+                <h1 className="mb-11 inset-0 text-4xl font-semibold font-recursive">{currentTranslations.projects.title}</h1>
                 <Project image="bg-accommodation" name="Kasa" header={currentTranslations.projects.modal.kasaWebsite.header} onClick={() => handleOpen({ 
                     imagePreview: "/kasa-page.svg", 
                     alt: "Preview of the Kasa website", 

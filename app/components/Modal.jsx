@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import FocusLock from "react-focus-lock"
 import Image from "next/image"
@@ -14,16 +15,37 @@ export default function Modal({ isVisible, onClose, imagePreview, alt, title, de
         if( event.target.id === "wrapper") onClose()
     }
 
+    const [isMedium, setIsMedium] = useState(
+        typeof window !== "undefined" ? window.innerWidth >= 768 : false
+    )
+
     const modalAnimation = {
         hidden: { opacity: 0, y: "100% "},
         visible: { opacity: 100, y: 0 },
         exit: { opacity: 0, y: "100%" }
     }
 
-    const transition = {
+    const transition = isMedium 
+    ? {
         duration: 0.2,
         ease: "easeInOut"
-    }  
+      }
+    : {
+        duration: 0.1,
+        ease: "easeInOut"
+      }  
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMedium(window.innerWidth > 768)
+        }
+    
+        window.addEventListener("resize", handleResize)
+    
+        return () => {
+            window.removeEventListener("resize", handleResize)
+        }
+    }, [])
 
     return (
         <FocusLock disabled={!isVisible}>
@@ -37,7 +59,7 @@ export default function Modal({ isVisible, onClose, imagePreview, alt, title, de
                 exit="exit"
                 >
                     <div className="relative flex flex-col overflow-y-auto h-full mt-48 bg-[#f6fafc] rounded-t-[50px] border-t-2 border-primary md:overflow-hidden dark:bg-[#16130E]">
-                        <button className="fixed m-6 text-xl place-self-end bg-[#f2fcfe] dark:bg-[#16130E] rounded" onClick={handleModalClose}><FaXmark className="text-4xl" /></button>      
+                        <button className="fixed z-40 m-6 text-xl place-self-end rounded" onClick={handleModalClose}><FaXmark className="text-4xl" /></button>      
                         <div className="flex flex-col-reverse justify-between my-auto mx-auto w-full gap-8 max-w-6xl px-4 my-34 mt-20 text-center md:flex-row md:text-start md:mt-auto dark:text-[#F5F5F5]">
                             <div className="flex flex-col-reverse w-full md:max-w-lg md:flex-col">
                                 <Image
@@ -52,7 +74,7 @@ export default function Modal({ isVisible, onClose, imagePreview, alt, title, de
                                 <div className="flex justify-between gap-12 mb-8 text-center text-xl font-bold md:mb-0 md:mt-8" dangerouslySetInnerHTML={{ __html: redirectButton }} />
                             </div>
                             <div className="space-y-5">
-                                <h1 className="text-4xl font-semibold font-recursive">{title}</h1>
+                                <h1 className="text-3xl md:text-4xl mb:text-4xl font-semibold font-recursive">{title}</h1>
                                 <div>
                                     <h2 className="text-2xl mb-1">Details</h2>
                                     <p className="flex flex-col gap-2 opacity-80" dangerouslySetInnerHTML={{ __html: details }} />
