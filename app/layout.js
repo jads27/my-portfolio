@@ -1,4 +1,5 @@
 import './globals.css'
+import Head from "next/head"
 
 export const metadata = {
   title: 'Jimmy Alves Da Silva - Web Developer - Portfolio',
@@ -9,6 +10,19 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang='en'>    
+        <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (localStorage.getItem("darkMode") === "true") {
+                  document.documentElement.classList.add("dark");
+                }
+              })();
+            `,
+          }}
+        />
+      </Head>
       <body className="bg-[#f6fafc] text-[#16130E] font-noto-sans-tamil dark:bg-[#16130E] dark:text-[#F5F5F5]">{children}</body>
     </html>
   )

@@ -4,10 +4,14 @@ import translations from "../translations";
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem("language") || "en"
+  });
 
   const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === "en" ? "fr" : "en"));
+    const newLanguage = language === "en" ? "fr" : "en"
+    setLanguage(newLanguage)
+    localStorage.setItem("language", newLanguage)
   };
 
   return (

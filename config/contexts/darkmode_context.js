@@ -3,16 +3,20 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const DarkModeContext = createContext()
 
 export const DarkModeProvider = ({ children }) => {
-    const [darkMode, setDarkMode] = useState(false)
+    const [darkMode, setDarkMode] = useState(() => {
+        return document.documentElement.classList.contains("dark") || localStorage.getItem("darkMode") === "true"
+    })
 
     const toggleDarkMode = () => {
-        setDarkMode(!darkMode)
+        const newMode = !darkMode
+        setDarkMode(newMode)
+        localStorage.setItem("darkMode", newMode)
     }
     
     useEffect(() => {
-        if (darkMode) {
+        if (darkMode && !document.documentElement.classList.contains("dark")) {
             document.documentElement.classList.add("dark")
-        } else {
+        } else if (!darkMode && document.documentElement.classList.contains("dark")) {
             document.documentElement.classList.remove("dark")
         }
     }, [darkMode])

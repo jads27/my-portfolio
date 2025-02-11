@@ -23,6 +23,7 @@ export default function SkillsSection() {
                         height={32}
                         layout="responsive"
                         priority
+                        className="pl-1"
                         />
                         <Image  
                         src="/react.svg"
@@ -47,6 +48,7 @@ export default function SkillsSection() {
                         height={32}
                         layout="responsive"
                         priority
+                        className="pr-1"
                         />
                     </div>
                     <h2 className="mb-3 text-2xl">{currentTranslations.skills.tools.title}</h2>

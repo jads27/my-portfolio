@@ -32,13 +32,13 @@ export default function DropdownMenu({ isOpen, onClose }) {
         }
       : {
           hidden: { opacity: 0, y: -100 },
-          visible: { opacity: 1, y: -64 },
+          visible: { opacity: 1, y: -65 },
           exit:  { opacity: 0, y: -100 }
         }
 
     const transition = isMedium
     ? {
-        duration: 0.35,
+        duration: 0.25,
         ease: "easeInOut"
       }  
     : {
