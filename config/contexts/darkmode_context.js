@@ -1,33 +1,40 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react"
 
-const DarkModeContext = createContext()
+const DarkModeContext = createContext();
 
 export const DarkModeProvider = ({ children }) => {
-    const [darkMode, setDarkMode] = useState(() => {
-        return document.documentElement.classList.contains("dark") || localStorage.getItem("darkMode") === "true"
-    })
+    const [darkMode, setDarkMode] = useState(false)
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const savedMode = localStorage.getItem("darkMode") === "true"
+            setDarkMode(savedMode)
+
+            if (savedMode) {
+                document.documentElement.classList.add("dark")
+            } else {
+                document.documentElement.classList.remove("dark")
+            }
+        }
+    }, []);
 
     const toggleDarkMode = () => {
-        const newMode = !darkMode
-        setDarkMode(newMode)
-        localStorage.setItem("darkMode", newMode)
-    }
-    
-    useEffect(() => {
-        if (darkMode && !document.documentElement.classList.contains("dark")) {
-            document.documentElement.classList.add("dark")
-        } else if (!darkMode && document.documentElement.classList.contains("dark")) {
-            document.documentElement.classList.remove("dark")
-        }
-    }, [darkMode])
+        setDarkMode((prevMode) => {
+            const newMode = !prevMode
+            if (typeof window !== "undefined") {
+                localStorage.setItem("darkMode", newMode)
+                document.documentElement.classList.toggle("dark", newMode)
+            }
+            return newMode;
+        });
+    };
 
     return (
-       <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+        <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
             {children}
-       </DarkModeContext.Provider>
-    )
-}
+        </DarkModeContext.Provider>
+    );
+};
 
 export const useDarkMode = () => {
     return useContext(DarkModeContext)
-}
+};
