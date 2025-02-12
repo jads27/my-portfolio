@@ -88,22 +88,22 @@ export default function DropdownMenu({ isOpen, onClose }) {
                 <div className="flex inset-0 mx-auto max-w-6xl py-3 px-4 md:w-full">
                     <ul className="grid grid-rows-2 grid-cols-2 justify-around w-full md:flex">
                         <li className="order-1 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
-                            <SmoothScrollLink href="home">
+                            <SmoothScrollLink href="home" onClick={onClose}>
                                 <span className="font-roboto-mono font-bold text-primary">01.</span> {currentTranslations.navigation.home}
                             </SmoothScrollLink>
                         </li>
                         <li className="order-3 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
-                            <SmoothScrollLink href="skills">
+                            <SmoothScrollLink href="skills" onClick={onClose}> 
                                 <span className="font-roboto-mono font-bold text-primary">02.</span> {currentTranslations.navigation.skills}
                             </SmoothScrollLink>
                         </li>
                         <li className="order-5 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
-                            <SmoothScrollLink href="projects">
+                            <SmoothScrollLink href="projects" onClick={onClose}>
                                 <span className="font-roboto-mono font-bold text-primary">03.</span> {currentTranslations.navigation.projects}
                             </SmoothScrollLink>
                         </li>
                         <li className="order-2 md:order-none rounded-lg hover:bg-secondary hover:bg-opacity-50 ease-in-out cursor-pointer md:hidden">
-                            <SmoothScrollLink href="contact">
+                            <SmoothScrollLink href="contact" onClick={onClose}> 
                                 <span className="font-roboto-mono font-bold text-primary">04.</span> {currentTranslations.navigation.contact}
                             </SmoothScrollLink>
                         </li>
