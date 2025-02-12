@@ -34,11 +34,11 @@ export default function ContactSection() {
                     <p className="mb-4 md:mb-8">{currentTranslations.contact.contactText.part1}<a className="text-primary visited:text-purple-500" href="mailto:jalvesdsilva27@gmail.com"> {currentTranslations.contact.contactText.part2}</a> !</p>
                     <p>{currentTranslations.contact.socials}</p>
                     <div className="flex space-x-8 mt-5 justify-center md:justify-start">
-                    <a className="flex items-center space-x-2 p-2.5 rounded-xl bg-primary text-[#F1EEE9]" href="https://www.linkedin.com/in/jimmy-alves-da-silva-ba2834255/" target="_blank" rel="noopener noreferrer">
+                    <a className="flex justify-center items-center w-[110px] space-x-2 p-2.5 rounded-xl bg-primary text-[#F1EEE9]" href="https://www.linkedin.com/in/jimmy-alves-da-silva-ba2834255/" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin />
                         <span>Linkedin</span>
                     </a>
-                    <a className="flex items-center space-x-2 p-2.5 rounded-xl bg-primary text-[#F1EEE9]" href="https://github.com/jads27" target="_blank" rel="noopener noreferrer">
+                    <a className="flex justify-center items-center w-[110px] space-x-2 p-2.5 rounded-xl bg-primary text-[#F1EEE9]" href="https://github.com/jads27" target="_blank" rel="noopener noreferrer">
                         <FaGithub />
                         <span>Github</span>
                     </a>

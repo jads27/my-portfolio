@@ -12,9 +12,10 @@ export default function SkillsSection() {
                 <div className="flex items-center flex-col">
                     <h1 className="mb-11 text-4xl font-semibold font-recursive">{currentTranslations.skills.title}</h1>
                     <h2 className="mb-3 text-2xl">{currentTranslations.skills.technologies.title}</h2>
+                    <p className="md:w-1/2 text-center opacity-80 mb-5">{currentTranslations.skills.technologies.description}</p>
                     <div className="relative flex w-full mx-auto max-w-xl max-h-32 mb-11 py-5 rounded-2xl border-2 border-solid border-primary">
-                        <div className="absolute flex items-center p-7 text-center inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-700 bg-primary">
-                            <span className="select-none text-white text-sm font-black">{currentTranslations.skills.technologies.description}</span>
+                        <div className="absolute flex items-center p-7 inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-700 bg-primary">
+                            <span className="text-center w-full select-none text-white text-lg font-black"> TypeScript - React - NextJS - Tailwind</span>
                         </div>
                         <Image
                         src="/typescript.svg"
@@ -52,9 +53,10 @@ export default function SkillsSection() {
                         />
                     </div>
                     <h2 className="mb-3 text-2xl">{currentTranslations.skills.tools.title}</h2>
+                    <p className="md:w-1/2 text-center opacity-80 mb-5">{currentTranslations.skills.tools.description}</p>
                     <div className="relative flex w-full mx-auto max-w-[18rem] max-h-32 py-5 rounded-2xl border-2 border-solid border-primary">
                         <div className="absolute flex items-center p-7 text-center inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-700 bg-primary">
-                            <span className="select-none text-white text-sm font-black">{currentTranslations.skills.tools.description}</span>
+                            <span className="text-center w-full select-none text-white text-lg font-black">Figma - GitHub</span>
                         </div>
                         <Image
                         src="/figma.svg"
