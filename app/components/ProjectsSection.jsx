@@ -31,7 +31,7 @@ export default function ProjectsSection() {
             <div className="flex items-center flex-col md:mx-28">
                 <h1 className="mb-11 inset-0 text-4xl font-semibold font-recursive">{currentTranslations.projects.title}</h1>
                 <Project image="bg-accommodation" name="Kasa" header={currentTranslations.projects.modal.kasaWebsite.header} onClick={() => handleOpen({ 
-                    imagePreview: "/kasa-page.svg", 
+                    imagePreview: "/kasa-page.gif", 
                     alt: "Preview of the Kasa website", 
                     title: currentTranslations.projects.modal.kasaWebsite.title, 
                     details: `<span>${currentTranslations.projects.modal.kasaWebsite.description.part1}</span><span>${currentTranslations.projects.modal.kasaWebsite.description.part2}</span>`, 
@@ -39,7 +39,7 @@ export default function ProjectsSection() {
                     redirectButton: `<a class="flex justify-center items-center w-1/2 text-secondary py-3 font-bold rounded border-2 border-secondary md:py-6" href="https://github.com/jads27/kasa" target="_blank" rel="noopener noreferrer">${currentTranslations.projects.modal.viewCode}</a><a class="flex justify-center items-center w-1/2 text-[#F5F5F5] bg-primary py-3 rounded md:py-6" href="https://kasa-five-mocha.vercel.app/" target="_blank" rel="noopener noreferrer">${currentTranslations.projects.modal.visitWebsite}</a>`
                     })} />
                 <Project image="bg-annie-spratt" name="Booki" header={currentTranslations.projects.modal.bookiWebsite.header} onClick={() => handleOpen({ 
-                    imagePreview: "/booki-page.svg", 
+                    imagePreview: "/booki-page.gif", 
                     alt: "Preview of the Booki website", 
                     title: currentTranslations.projects.modal.bookiWebsite.title, 
                     details: `<span>${currentTranslations.projects.modal.bookiWebsite.description.part1}</span><span>${currentTranslations.projects.modal.bookiWebsite.description.part2}</span><span>${currentTranslations.projects.modal.bookiWebsite.description.part3}</span>`, 
@@ -47,7 +47,7 @@ export default function ProjectsSection() {
                     redirectButton: `<a class="flex justify-center items-center w-1/2 text-secondary py-3 font-bold rounded border-2 border-secondary md:py-6" href="https://github.com/jads27/booki" target="_blank" rel="noopener noreferrer">${currentTranslations.projects.modal.viewCode}</a><a class="flex justify-center items-center w-1/2 text-[#F5F5F5] bg-primary py-3 rounded md:py-6" href="https://jads27.github.io/booki/" target="_blank" rel="noopener noreferrer">${currentTranslations.projects.modal.visitWebsite}</a>`
                     })} />
                 <Project image="bg-bar-lullaby-paris" name="Sophie Bluel" header={currentTranslations.projects.modal.sophieBluelPortfolioWebsite.header} onClick={() => handleOpen({ 
-                    imagePreview: "/sophie-bluel-portfolio-page.svg", 
+                    imagePreview: "/sophie-bluel-portfolio-page.gif", 
                     alt: "Preview of the Sopie Bluel Portfolio Website", 
                     title: currentTranslations.projects.modal.sophieBluelPortfolioWebsite.title, 
                     details: `<span>${currentTranslations.projects.modal.sophieBluelPortfolioWebsite.description.part1}</span><span>${currentTranslations.projects.modal.sophieBluelPortfolioWebsite.description.part2}</span>`, 
