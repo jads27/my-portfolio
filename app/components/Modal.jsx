@@ -1,11 +1,19 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
 import FocusLock from "react-focus-lock"
 import Image from "next/image"
 import { FaXmark } from "react-icons/fa6"
 
-export default function Modal({ isVisible, onClose, imagePreview, alt, title, details, stack, redirectButton }) {
+export default function Modal({ isVisible, onClose, videoMp4, videoWebm , alt, title, details, stack, redirectButton }) {
     if ( !isVisible ) return null
+
+    const videoRef = useRef(null)
+
+    useEffect(() => {
+        if (isVisible && videoRef.current) {
+            videoRef.current.play()
+        }
+    }, [isVisible])
 
     const handleModalClose = () => {
         onClose()
@@ -62,15 +70,23 @@ export default function Modal({ isVisible, onClose, imagePreview, alt, title, de
                         <button className="fixed z-40 m-6 text-xl place-self-end rounded" onClick={handleModalClose}><FaXmark className="text-4xl" /></button>      
                         <div className="flex flex-col-reverse justify-between my-auto mx-auto w-full gap-8 max-w-6xl px-4 my-34 mt-20 text-center md:flex-row md:text-start md:mt-auto dark:text-[#F5F5F5]">
                             <div className="flex flex-col-reverse w-full md:max-w-lg md:flex-col">
-                                <Image
-                                    className="rounded-xl"
-                                    src={imagePreview}
-                                    alt={alt}
-                                    width={204}
-                                    height={164}
-                                    layout="responsive"
-                                    priority
-                                />   
+                                {videoMp4 || videoWebm ? (
+                                    <video ref={videoRef} className="rounded-xl" preload="metadata" autoplay muted>
+                                        {videoWebm && <source src={videoWebm} type="video/webm" />}
+                                        {videoMp4 && <source src={videoMp4} type="video/mp4" />}
+                                        Votre navigateur ne supporte pas la lecture des vidéos.
+                                    </video>
+                                ) : (
+                                    <Image
+                                        className="rounded-xl"
+                                        src={imagePreview}
+                                        alt={alt}
+                                        width={204}
+                                        height={164}
+                                        layout="responsive"
+                                        priority
+                                    />
+                                )}   
                                 <div className="flex justify-between gap-12 mb-8 text-center text-xl font-bold md:mb-0 md:mt-8" dangerouslySetInnerHTML={{ __html: redirectButton }} />
                             </div>
                             <div className="space-y-5">
