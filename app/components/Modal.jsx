@@ -83,7 +83,7 @@ export default function Modal({ isVisible, onClose, imagePreview, videoMp4, vide
                 transition={transition}
                 exit="exit"
                 >
-                    <div className="relative flex flex-col overflow-y-auto h-full mt-48 bg-[#f6fafc] rounded-t-[50px] border-t-2 border-primary md:overflow-hidden dark:bg-[#16130E] py-20">
+                    <div className="relative flex flex-col overflow-y-auto h-full mt-44 bg-[#f6fafc] rounded-t-[50px] border-t-2 border-primary dark:bg-[#16130E] py-20">
                         <button className="absolute top-[24px] mr-6 z-40 text-xl place-self-end rounded" onClick={handleModalClose}><FaXmark className="text-4xl" /></button>      
                         <div className="flex flex-col-reverse justify-between my-auto mx-auto w-full gap-14 max-w-7xl px-2 text-center md:flex-row md:text-start md:mt-auto dark:text-[#F5F5F5]">
                             <div className="flex flex-col-reverse md:max-w-lg md:flex-col">
